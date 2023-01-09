@@ -1,7 +1,7 @@
 #!/bin/sh
-FILE=/etc/adblock-scripts
-if [ -f "$FILE" ]; then
-    cd /etc/adblock-scripts && curl https://hosts.oisd.nl/ > hosts && cd && cd /etc/adblock-scripts && mv hosts /etc && cd
+if [[ -d /etc/adblock-scripts ]]; 
+then
+    cd /etc/adblock-scripts; curl https://hosts.oisd.nl/ > hosts; cd /etc/adblock-scripts; mv hosts /etc; cd
 else 
-    cd /etc && mkdir adblock-scripts && cd /etc/adblock-scripts && curl https://hosts.oisd.nl/ > hosts && cd && cd /etc/adblock-scripts && mv hosts /etc && cd
+    cd /etc; mkdir adblock-scripts; cd /etc/adblock-scripts; curl https://hosts.oisd.nl/ > hosts; cd /etc/adblock-scripts; mv hosts /etc; cd
 fi
